@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body {
+    font-family: 'Bebas Neue', sans-serif;
+    background: beige;
+    display:block;
+    background-image:url("Fondo Pag1.png");
+    background-size:cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    width: 100%;
+    height: 100%;
+    
+}
+h1 {
+    text-align:center;
+    font-size: 30px;
+    margin-bottom:50px;
+    color: black;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.986);
+    max-width: 100%; 
+    user-select: none;
+}
+.btn{
+    background-color: #444141;
+    font-family: 'Bebas Neue', sans-serif;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    padding: 15px 30px;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: none;
+    user-select: none;
+}
+
+.btn:hover {
+    background-image: linear-gradient(90deg, #53cbef 0%, #dcc66c 50%, #ffa3b6 75%, #53cbef 100%);
+    animation: slidernbw 5s linear infinite;
+    color: #000;
+}
+
+.btn-2{
+    background-color: #444141;
+    font-family: 'Bebas Neue', sans-serif;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    padding: 15px 30px;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: none;
+    user-select: none;
+}
+.btn-2:hover{
+    background-image: linear-gradient(90deg, #53cbef 0%, #dcc66c 50%, #ffa3b6 75%, #53cbef 100%);
+    animation: slidernbw 5s linear infinite;
+    color: #000;
+}
+@keyframes slidernbw {
+    to {
+     background-position: 20vw;
+    }
+}
+main {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 700px;
+    margin:auto;
+    user-select: none;
+}
+
+
+figure,
+figure img {
+    display: inline-block;
+    width: 100%;
+}
+
+figure {
+    position: relative;
+    transition: all ease .5s;
+    transform-style: preserve-3d;
+    transform: perspective(600px) rotateY(0deg);
+    cursor: pointer;
+    box-shadow: 3px 3px 16px rgb(0, 0, 0, 0.6);
+}
+
+figure::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0);
+    transition: 0.3s all ease;
+}
+
+figure:hover:after {
+    background: rgba(255, 255, 255, 0.137);
+}
+
+figure.abierta {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+figure .back {
+    display: block;
+    backface-visibility: hidden;
+}
+
+figure .image {
+    position: absolute;
+    top: 0;
+    transform: perspective(600px) rotateY(180deg);
+    backface-visibility: hidden;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+@media screen and (max-height:664px) {
+    main {
+          max-width: 630px;
+    }
+    
+}
+@media screen and (max-height:615px) {
+    main {
+          max-width: 500px;
+    }
+    
+}
+@media screen and (max-width:720px) {
+    main {
+          max-width: 630px;
+    }
+    
+}
+
+
+@media screen and (max-width:647px) {
+    main {
+          max-width: 550px;
+    }
+    
+}
+
+@media screen and (max-width:567px) {
+    main {
+          max-width: 450px;
+    }
+    
+}
+
+@media screen and (max-width:463px) {
+    main {
+        grid-template-columns: repeat(3,1fr);
+          max-width: 330px;
+    }
+    
+}
+@media screen and (max-width:355px) {
+    main {
+        grid-template-columns: repeat(2,1fr);
+          max-width: 190px;
+    }
+    
+}
+@media screen and (max-width:295px) {
+    main {
+        grid-template-columns: repeat(2,1fr);
+          max-width: 160px;
+    }
+    
+}
+
