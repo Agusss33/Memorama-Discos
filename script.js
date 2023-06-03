@@ -16,6 +16,13 @@ class Memorama {
 
         this.iniciarJuego();
 
+        const boton2El = document.querySelector(".btn-2")
+
+        boton2El.addEventListener("click",()=>{
+            
+               this.NuevoJuego();
+        })
+
     }
 
     iniciarJuego() {
@@ -132,7 +139,7 @@ class Memorama {
     }
 
     Verificar() {
-
+    
         this.foundPairs++;
 
         this.carta1 = null;
@@ -141,10 +148,15 @@ class Memorama {
 
         if (this.maxPairNumber == this.foundPairs) {
 
-            swal("Ganaste!");
-            this.NuevoJuego();
-            
+            swal({
+                text: "Ganaste!",
+                timer: 1000,
+                button: false
+                })
+
+                this.NuevoJuego();
         }
+       
 
     }
 
@@ -153,7 +165,7 @@ class Memorama {
         this.removeClickEvents();
         this.cards.forEach(card => card.classList.remove("abierta"));
 
-        setTimeout(this.iniciarJuego.bind(this), 1000);
+        setTimeout(this.iniciarJuego.bind(this), 2000);
 
     }
 
@@ -162,12 +174,11 @@ class Memorama {
 const BotonEl = document.querySelector(".btn")
 
 BotonEl.addEventListener("click", () => {
+      
     new Memorama();
+    BotonEl.disabled = true;
+   
 });
 
-const boton2El = document.querySelector(".btn-2")
 
-boton2El.addEventListener("click",()=>{
-    window.location.reload();
-})
 
