@@ -19,8 +19,10 @@ class Memorama {
         const boton2El = document.querySelector(".btn-2")
 
         boton2El.addEventListener("click",()=>{
-            
-               this.NuevoJuego();
+               
+                this.Jugar=false;
+                this.NuevoJuego();
+
         })
 
     }
@@ -151,9 +153,10 @@ class Memorama {
             swal({
                 text: "Ganaste!",
                 timer: 1000,
-                button: false
+                button: false,
+                closeOnClickOutside: false
                 })
-
+                
                 this.NuevoJuego();
         }
        
@@ -166,6 +169,7 @@ class Memorama {
         this.cards.forEach(card => card.classList.remove("abierta"));
 
         setTimeout(this.iniciarJuego.bind(this), 2000);
+
 
     }
 
